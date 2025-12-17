@@ -125,13 +125,9 @@
         margin: 14px 0 10px;
       }
 
-      /* Notion toggle styling */
-      details {
-        border-radius: 10px;
-      }
-
+      /* Toggle styling */
       summary {
-        list-style: none; /* remove default marker */
+        list-style: none;
         cursor: pointer;
         user-select: none;
         display: flex;
@@ -139,15 +135,15 @@
         align-items: baseline;
       }
 
-      /* Custom caret */
+      /* Bigger Notion-like caret */
       summary::before {
         content: "▸";
-        font-size: 14px;
+        font-size: 20px;
         line-height: 1;
-        transform: translateY(1px);
         color: var(--text);
-        width: 16px;
-        flex: 0 0 16px;
+        width: 22px;
+        flex: 0 0 22px;
+        transform: translateY(2px);
       }
 
       details[open] > summary::before {
@@ -175,7 +171,7 @@
       /* Nested toggles */
       .nested {
         margin-top: 12px;
-        padding-left: 22px; /* indentation like Notion */
+        padding-left: 22px;
       }
 
       .nested details {
@@ -187,8 +183,16 @@
         font-weight: 650;
       }
 
+      /* Slightly smaller caret for nested toggles */
+      .nested summary::before {
+        font-size: 16px;
+        width: 18px;
+        flex: 0 0 18px;
+        transform: translateY(2px);
+      }
+
       .nested .content {
-        padding-left: 26px; /* indent under the toggle title */
+        padding-left: 26px;
         margin-top: 8px;
       }
 
@@ -198,18 +202,21 @@
       }
       li { margin: 8px 0; }
 
-      figure {
-        margin: 14px 0 0;
+      /* Images like Notion blocks */
+      .case-image {
+        margin: 18px 0 6px;
       }
-      figure img {
+
+      .case-image img {
         width: 100%;
         height: auto;
-        border-radius: 8px;
+        border-radius: 6px;
         border: 1px solid var(--line);
         display: block;
         background: #fff;
       }
-      figcaption {
+
+      .case-image figcaption {
         margin-top: 6px;
         font-size: 13px;
         color: var(--muted);
@@ -250,7 +257,7 @@
           <div class="contact">
             <h3>Contact</h3>
             <ul>
-              <li><span class="label">Phone</span> <a href="tel:+18088961374">+1 808-896-1374</a></li>
+              <li><a href="tel:+18088961374">+1 808-896-1374</a></li>
               <li><a href="mailto:samanthakblack@gmail.com">samanthakblack@gmail.com</a></li>
               <li><a href="https://www.linkedin.com/in/skblack/" target="_blank" rel="noreferrer">LinkedIn</a></li>
               <li>Remote, based in Hilo, HI</li>
@@ -338,13 +345,10 @@
                 </div>
               </details>
 
-              <!-- Optional image -->
-              <!--
-              <figure>
+              <figure class="case-image">
                 <img src="case1.png" alt="Workflow visual made with Figma" />
                 <figcaption>Made with Figma</figcaption>
               </figure>
-              -->
             </div>
           </details>
 
@@ -396,6 +400,11 @@
                   </p>
                 </div>
               </details>
+
+              <figure class="case-image">
+                <img src="case2.png" alt="Example of Department SharePoint Migration List" />
+                <figcaption>Example of Department SharePoint Migration List</figcaption>
+              </figure>
             </div>
           </details>
 
@@ -409,7 +418,8 @@
                 <div class="content">
                   <p>
                     Contract management for 200+ annual subject matter experts (SMEs) was fragmented across departments. Paper-based agreements (over 4,000 records)
-                    were difficult to track, non-compliant, and there was no central system for contract management or build history.
+                    were difficult to track, non-compliant, and there was no central system for contract management or build history. Leadership lacked visibility into key metrics
+                    such as builds per cycle, SME utilization, and annual contractor costs, making forecasting difficult.
                   </p>
                 </div>
               </details>
@@ -433,7 +443,7 @@
                     <li>Created a single source of truth for six years of historical and current course build and contract data.</li>
                     <li>Enabled leadership and departments to track builds per cycle, SME frequency, departmental output, and annual contract costs with clarity.</li>
                     <li>Improved compliance and accountability, reducing risk of contract lapses and compliance issues.</li>
-                    <li>Established a robust foundation for accurate budget forecasting and long-term operational planning.</li>
+                    <li>Established a foundation for accurate budget forecasting and long-term operational planning.</li>
                   </ul>
                 </div>
               </details>
@@ -447,6 +457,11 @@
                   </p>
                 </div>
               </details>
+
+              <figure class="case-image">
+                <img src="case3.png" alt="Annual builds per academic department chart made with Figma" />
+                <figcaption>Made with Figma</figcaption>
+              </figure>
             </div>
           </details>
         </section>
