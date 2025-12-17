@@ -15,8 +15,14 @@
       --link:#7fa68a;
       --panel:#eef5f0;
       --panel-hover:#e7f0ea;
+
       --max:760px;
       --font:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial;
+
+      /* Case study inner toggle alignment */
+      --sub-indent: 18px;  /* inset for Challenge and Action rows */
+      --sub-arrow: 26px;   /* arrow column width */
+      --sub-gap: 12px;     /* gap between arrow and label */
     }
 
     *{box-sizing:border-box}
@@ -63,8 +69,8 @@
       position:absolute;
       inset:0;
       background:
-        linear-gradient(rgba(255,255,255,0.22), rgba(255,255,255,0.22)),
-        url("banner.jpg") center / cover no-repeat;
+        linear-gradient(rgba(255,255,255,0.18), rgba(255,255,255,0.18)),
+        url("banner.png") center / cover no-repeat;
       pointer-events:none;
     }
 
@@ -72,21 +78,24 @@
 
     h1{
       font-size:34px;
-      margin:0 0 34px;   /* was 18px */
+      margin:0 0 34px; /* extra space between name and photo */
       font-weight:700;
       letter-spacing:-.15px;
     }
+
     h2{
       font-size:22px;
-      margin:14px 0 12px; /* reduces space above */
+      margin:14px 0 12px; /* reduced space above sections */
       font-weight:600;
       letter-spacing:-.05px;
     }
+
     h3{
       font-size:17px;
       margin:0 0 8px;
       font-weight:600;
     }
+
     p{margin:12px 0}
 
     /* Top layout */
@@ -98,13 +107,12 @@
       margin-top:6px;
     }
 
-    /* Make sure avatar never reaches the title area */
     .avatar{
-      margin-top:-12px;  /* was -30px */
+      margin-top:-12px; /* keeps photo closer to its own row and away from name */
     }
     .avatar img{
-      width:170px;
-      height:170px;
+      width:140px;
+      height:140px;
       border-radius:999px;
       object-fit:cover;
       border:4px solid #fff;
@@ -116,7 +124,7 @@
     .contact li{margin:6px 0}
 
     .intro{
-      margin-top:20px;
+      margin-top:22px; /* more space after contact before intro */
     }
 
     .nav{
@@ -135,7 +143,17 @@
       margin:10px 0 2px;
     }
 
-    /* Toggles */
+    /* Case study blocks spacing */
+    #case-studies h2{margin-bottom:26px}
+    .toggle-block{
+      background:var(--panel);
+      border-radius:10px;
+      padding:12px 14px;
+      margin:28px 0; /* more whitespace between each study */
+    }
+    .toggle-block:hover{background:var(--panel-hover)}
+
+    /* Outer toggle (the case study title) */
     summary{
       list-style:none;
       cursor:pointer;
@@ -158,63 +176,48 @@
     }
     details[open] > summary::before{content:"▾"}
 
-    /* More whitespace between case study blocks */
-   .toggle-block{
-      background:var(--panel);
-      border-radius:10px;
-      padding:12px 14px;
-      margin:32px 0;     /* was 18px */
-    }
-    .toggle-block:hover{background:var(--panel-hover)}
-
     .toggle-block > summary{
       font-size:19px;
       font-weight:650;
       letter-spacing:-.1px;
     }
 
-   /* --- Notion-like nested toggle alignment --- */
-.nested{
-  padding-left:0;        /* no extra global indent */
-  margin-top:10px;
-}
-
-/* Make each inner toggle row (Challenge, Action, etc.) start slightly in */
-.nested details > summary{
-  padding-left:22px;     /* creates the left inset shown in your screenshot */
-}
-
-/* Arrow for inner toggles */
-.nested summary::before{
-  width:28px;
-  flex:0 0 28px;
-  font-size:22px;
-}
-
-/* Body text under each label aligns under the label text */
-.content{
-  margin-top:8px;
-  padding-left:50px;     /* 22 (summary inset) + 28 (arrow column) = 50 */
-}
-
-/* Bullets align with body text */
-.nested ul{
-  margin:10px 0;
-  padding-left:50px;     /* same as .content */
-}
-
-/* Keep bullets visually Notion-like */
-.nested li{
-  margin:12px 0;
-}
-
-    .content{
-      padding-left:42px;   /* this aligns text under "Challenge" */
-      margin-top:8px;
+    /* ===== Inner toggles (Challenge, Action, Result, Takeaway) ===== */
+    .nested{
+      padding-left:0;
+      margin-top:10px;
     }
 
-    ul{padding-left:22px;margin:10px 0}
-    li{margin:8px 0}
+    .nested details{
+      margin:12px 0;
+    }
+
+    .nested details > summary{
+      padding-left:var(--sub-indent);
+      font-size:16px;
+      font-weight:600;
+    }
+
+    .nested details > summary::before{
+      width:var(--sub-arrow);
+      flex:0 0 var(--sub-arrow);
+      margin-right:var(--sub-gap);
+      font-size:22px;
+      justify-content:center;
+    }
+
+    /* Body under label aligns under the label text */
+    .content{
+      margin-top:8px;
+      padding-left:calc(var(--sub-indent) + var(--sub-arrow) + var(--sub-gap));
+    }
+
+    /* Lists align with content */
+    .nested ul{
+      margin:10px 0;
+      padding-left:calc(var(--sub-indent) + var(--sub-arrow) + var(--sub-gap) + 20px);
+    }
+    .nested li{margin:12px 0}
 
     /* Images */
     .case-image{
@@ -238,11 +241,8 @@
       max-width:min(480px,100%);
     }
 
-    /* Section spacing requests */
-    #case-studies h2{margin-bottom:26px}
-    #testimonials h2{margin-bottom:22px}
-
     /* Testimonials */
+    #testimonials h2{margin-bottom:22px} /* more space after header */
     .quote-title{margin:0 0 10px;font-weight:650}
     .quote-block{
       background:var(--panel);
@@ -265,50 +265,11 @@
       text-align:center;
     }
 
-    /* Mobile and narrow widths */
     @media(max-width:720px){
-      h1{margin-bottom:14px}
       .top-grid{grid-template-columns:1fr}
-      .avatar{margin-top:0}     /* no overlap on mobile */
+      .avatar{margin-top:0}
       .nav{justify-content:flex-start;gap:18px}
     }
-    /* ===== Notion-like alignment for inner toggles (Challenge/Action/Result/Takeaway) ===== */
-.nested{
-  padding-left: 0 !important;
-  margin-top: 10px !important;
-}
-
-/* tweak these 3 numbers if you want to fine tune */
-:root{
-  --sub-indent: 18px;  /* how far Challenge is inset */
-  --sub-arrow: 26px;   /* arrow column width */
-  --sub-gap: 12px;     /* space between arrow and label text */
-}
-
-/* inner toggle row */
-.nested details > summary{
-  padding-left: var(--sub-indent) !important;
-}
-
-/* inner arrow */
-.nested details > summary::before{
-  width: var(--sub-arrow) !important;
-  flex: 0 0 var(--sub-arrow) !important;
-  margin-right: var(--sub-gap) !important;
-  font-size: 22px !important;
-}
-
-/* paragraph under Challenge aligns under the word "Challenge" */
-.nested details > .content{
-  padding-left: calc(var(--sub-indent) + var(--sub-arrow) + var(--sub-gap)) !important;
-  margin-top: 8px !important;
-}
-
-/* bullets under Action and Result align with the paragraph */
-.nested details ul{
-  padding-left: calc(var(--sub-indent) + var(--sub-arrow) + var(--sub-gap) + 20px) !important;
-  margin: 10px 0 !important;
-}
   </style>
 </head>
 
@@ -369,13 +330,14 @@
 
         <details class="toggle-block" open>
           <summary>Scaling Course Production with New Workflows</summary>
+
           <div class="nested">
             <details open>
               <summary>Challenge</summary>
               <div class="content">
                 <p>
-                  Course production across 23 academic departments operated on a 30 week cycle. Builds were frequently delayed, with an average postponement rate
-                  of 41% between 2019 to 2023. These delays created downstream issues for faculty, operations, and learners.
+                  Course production across 23 academic departments operated on a 30 week cycle. Builds were frequently delayed, with an average postponement rate of 41% between 2019 to 2023.
+                  These delays created downstream issues for faculty, operations, and learners.
                 </p>
               </div>
             </details>
@@ -396,7 +358,7 @@
               <div class="content">
                 <ul>
                   <li>Reduced production timelines by 50% and increased productivity by 30%.</li>
-                  <li>Postponement rates improved: 41% (2019 to 2023) → 21% (2024) → 16% (2025).</li>
+                  <li>Postponement rates improved dramatically: from 41% (2019 to 2023) → 21% (2024) → 16% (2025).</li>
                   <li>Achieved a 23% decrease in course build postponements over two years since implementing the new schedule and contract framework.</li>
                 </ul>
               </div>
@@ -406,8 +368,7 @@
               <summary>Takeaway</summary>
               <div class="content">
                 <p>
-                  This project highlights my ability to redesign and lead large scale content production cycles, while building efficient, agile systems that reduce delays,
-                  improve quality, and enable sustainable delivery of learning experiences at scale.
+                  This project highlights my ability to redesign and lead large scale content production cycles, while building efficient, agile systems that reduce delays, improve quality, and enable sustainable delivery of learning experiences at scale.
                 </p>
               </div>
             </details>
@@ -421,6 +382,7 @@
 
         <details class="toggle-block">
           <summary>Large Scale LMS Migration &amp; Content Governance</summary>
+
           <div class="nested">
             <details open>
               <summary>Challenge</summary>
@@ -460,8 +422,7 @@
               <summary>Takeaway</summary>
               <div class="content">
                 <p>
-                  This initiative demonstrates my skill in orchestrating complex, cross functional content migrations while creating governance and tracking systems
-                  that ensure quality, consistency, and global visibility.
+                  This initiative demonstrates my skill in orchestrating complex, cross functional content migrations while creating governance and tracking systems that ensure quality, consistency, and global visibility.
                 </p>
               </div>
             </details>
@@ -475,13 +436,14 @@
 
         <details class="toggle-block">
           <summary>Digitizing Contracts &amp; Building a Scalable Tracking System</summary>
+
           <div class="nested">
             <details open>
               <summary>Challenge</summary>
               <div class="content">
                 <p>
-                  Contract management for 200+ annual subject matter experts was fragmented across departments. Paper based agreements were difficult to track and there was no central system for build history.
-                  Leadership lacked visibility into builds per cycle, SME utilization, and contractor costs.
+                  Contract management for 200+ annual subject matter experts was fragmented across departments. Paper based agreements were difficult to track and there was no central system for contract management or build history.
+                  Leadership lacked visibility into key metrics such as builds per cycle, SME utilization, and annual contractor costs.
                 </p>
               </div>
             </details>
@@ -514,8 +476,7 @@
               <summary>Takeaway</summary>
               <div class="content">
                 <p>
-                  This project shows how I build scalable operations and content tracking systems that strengthen compliance, improve transparency across departments,
-                  and enable data driven decision making needed to support global education programs.
+                  This project shows how I build scalable operations and content tracking systems that strengthen compliance, improve transparency across departments, and enable data driven decision making needed to support global education programs.
                 </p>
               </div>
             </details>
@@ -583,20 +544,3 @@
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
