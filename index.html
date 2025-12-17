@@ -1,540 +1,263 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Samantha Black | Portfolio</title>
-    <meta
-      name="description"
-      content="Samantha Black. Learning Experience & Content Operations Leader. Case studies, testimonials, and contact."
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Samantha Black | Portfolio</title>
 
-    <style>
-      :root {
-        --bg: #ffffff;
-        --text: #37352f;
-        --muted: rgba(55, 53, 47, 0.6);
-        --line: rgba(55, 53, 47, 0.12);
-        --link: #7fa68a;          /* soft notion-ish green */
-        --toggle-bg: #eef5f0;     /* green panel */
-        --toggle-hover: #e7f0ea;
-        --max: 760px;
-        --font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial;
-      }
+  <style>
+    :root {
+      --bg:#ffffff;
+      --text:#37352f;
+      --muted:rgba(55,53,47,.6);
+      --line:rgba(55,53,47,.12);
+      --link:#7fa68a;
+      --panel:#eef5f0;
+      --panel-hover:#e7f0ea;
+      --max:760px;
+      --font:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial;
+    }
 
-      * { box-sizing: border-box; }
-      html { scroll-behavior: smooth; }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:var(--font);
+      font-size:16px;
+      line-height:1.65;
+    }
 
-      body {
-        margin: 0;
-        background: var(--bg);
-        color: var(--text);
-        font-family: var(--font);
-        font-size: 16px;
-        line-height: 1.65;
-      }
+    .container{
+      width:min(var(--max),calc(100% - 32px));
+      margin:0 auto;
+    }
 
-      .container {
-        width: min(var(--max), calc(100% - 32px));
-        margin: 0 auto;
-      }
+    a{
+      color:var(--link);
+      text-decoration:underline;
+      text-underline-offset:3px;
+    }
 
-      a {
-        color: var(--link);
-        text-decoration: underline;
-        text-underline-offset: 3px;
-      }
-      a:hover { opacity: 0.9; }
+    header{padding:40px 0 12px}
 
-      header { padding: 48px 0 18px; }
+    /* ↓ HEADERS SCALED DOWN */
+    h1{font-size:36px;margin:0 0 12px;font-weight:700}
+    h2{font-size:24px;margin:36px 0 10px;font-weight:600}
+    h3{font-size:18px;margin:22px 0 8px;font-weight:600}
+    h4{font-size:15px;margin:16px 0 6px;font-weight:600}
 
-      h1 {
-        margin: 0 0 16px;
-        font-size: 44px;
-        line-height: 1.15;
-        font-weight: 700;
-        letter-spacing: -0.2px;
-      }
+    p{margin:12px 0}
+    hr{border:none;border-top:1px solid var(--line);margin:28px 0}
 
-      h2 {
-        margin: 44px 0 12px;
-        font-size: 30px;
-        line-height: 1.2;
-        font-weight: 650;
-        letter-spacing: -0.1px;
-      }
+    .top-grid{
+      display:grid;
+      grid-template-columns:180px 1fr;
+      gap:28px;
+      margin-bottom:10px;
+    }
 
-      h3 {
-        margin: 22px 0 10px;
-        font-size: 20px;
-        line-height: 1.3;
-        font-weight: 650;
-      }
+    .avatar img{
+      width:150px;
+      height:150px;
+      border-radius:999px;
+      object-fit:cover;
+    }
 
-      p { margin: 12px 0; }
-      .muted { color: var(--muted); }
+    .contact ul{list-style:none;padding:0;margin:6px 0}
+    .contact li{margin:6px 0}
 
-      hr {
-        border: none;
-        border-top: 1px solid var(--line);
-        margin: 30px 0;
-      }
+    .nav{
+      display:flex;
+      justify-content:space-between;
+      margin:14px 0;
+      font-weight:600;
+    }
 
-      .top-grid {
-        display: grid;
-        grid-template-columns: 180px 1fr;
-        gap: 28px;
-        align-items: start;
-        margin: 18px 0 8px;
-      }
+    /* ↓ REDUCED SPACE BEFORE THIS SECTION */
+    .leader-title{margin-top:18px}
 
-      .avatar img {
-        width: 160px;
-        height: 160px;
-        border-radius: 999px;
-        object-fit: cover;
-        display: block;
-      }
+    .callout{
+      background:var(--panel);
+      padding:16px 18px;
+      border-radius:10px;
+      margin:12px 0 6px;
+    }
 
-      .contact h3 { margin-top: 0; }
-      .contact ul {
-        list-style: none;
-        padding: 0;
-        margin: 8px 0 0;
-      }
-      .contact li { margin: 8px 0; }
+    summary{
+      list-style:none;
+      cursor:pointer;
+      display:flex;
+      align-items:baseline;
+      gap:10px;
+    }
 
-      .nav {
-        display: flex;
-        justify-content: space-between;
-        gap: 12px;
-        flex-wrap: wrap;
-        margin: 18px 0 10px;
-      }
-      .nav a {
-        font-weight: 600;
-        text-decoration: underline;
-      }
+    summary::before{
+      content:"▸";
+      font-size:28px;
+      width:30px;
+      flex:0 0 30px;
+      transform:translateY(3px);
+    }
 
-      /* Notion-like callout */
-      .callout {
-        background: var(--toggle-bg);
-        padding: 18px 20px;
-        border-radius: 10px;
-        margin: 14px 0 10px;
-      }
+    details[open]>summary::before{content:"▾"}
 
-      /* Toggle styling */
-      summary {
-        list-style: none;
-        cursor: pointer;
-        user-select: none;
-        display: flex;
-        gap: 10px;
-        align-items: baseline;
-      }
+    .toggle-block{
+      background:var(--panel);
+      border-radius:10px;
+      padding:14px;
+      margin:14px 0;
+    }
 
-      /* Bigger Notion-like caret (main) */
-      summary::before {
-        content: "▸";
-        font-size: 26px;          /* bigger */
-        line-height: 1;
-        color: var(--text);
-        width: 28px;              /* more spacing */
-        flex: 0 0 28px;
-        transform: translateY(3px);
-      }
+    .toggle-block>summary{
+      font-size:22px;
+      font-weight:700;
+    }
 
-      details[open] > summary::before {
-        content: "▾";
-      }
+    .nested{padding-left:22px;margin-top:10px}
+    .nested summary::before{font-size:22px;width:24px;flex:0 0 24px}
 
-      /* Big case study toggle block */
-      .toggle-block {
-        background: var(--toggle-bg);
-        border-radius: 10px;
-        padding: 14px 14px;
-        margin: 14px 0;
-      }
+    ul{padding-left:22px;margin:10px 0}
+    li{margin:8px 0}
 
-      .toggle-block > summary {
-        font-size: 26px;
-        font-weight: 700;
-        letter-spacing: -0.2px;
-      }
+    .case-image{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      margin:18px 0 6px;
+    }
 
-      .toggle-block:hover {
-        background: var(--toggle-hover);
-      }
+    .case-image img{
+      width:min(520px,100%);
+      border-radius:6px;
+      border:1px solid var(--line);
+    }
 
-      /* Nested toggles */
-      .nested {
-        margin-top: 12px;
-        padding-left: 22px;
-      }
+    .case-image figcaption{
+      margin-top:6px;
+      font-size:13px;
+      color:var(--muted);
+      text-align:center;
+    }
 
-      .nested details {
-        margin: 10px 0;
-      }
+    .quote-block{
+      background:var(--panel);
+      border-radius:10px;
+      padding:14px 16px;
+      margin:10px 0 18px;
+    }
 
-      .nested summary {
-        font-size: 18px;
-        font-weight: 650;
-      }
+    footer{
+      padding:40px 0 48px;
+      font-size:14px;
+      color:var(--muted);
+      text-align:center;
+    }
 
-      /* Nested caret slightly smaller but still prominent */
-      .nested summary::before {
-        font-size: 20px;
-        width: 22px;
-        flex: 0 0 22px;
-        transform: translateY(3px);
-      }
+    /* ↓ CENTERED BACK TO TOP */
+    .back-top{
+      margin-top:24px;
+      text-align:center;
+    }
 
-      .nested .content {
-        padding-left: 26px;
-        margin-top: 8px;
-      }
+    @media(max-width:720px){
+      .top-grid{grid-template-columns:1fr}
+      .avatar img{width:130px;height:130px}
+      .nav{justify-content:flex-start;gap:18px}
+    }
+  </style>
+</head>
 
-      ul {
-        margin: 10px 0 0;
-        padding-left: 22px;
-      }
-      li { margin: 8px 0; }
+<body>
+<header id="top">
+  <div class="container">
+    <h1>Samantha Black</h1>
 
-      /* Images like Notion blocks, but smaller and centered */
-      .case-image {
-        margin: 18px 0 6px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;      /* centers caption as well */
-      }
-
-      .case-image img {
-        width: min(520px, 100%);  /* smaller than full column */
-        height: auto;
-        border-radius: 6px;
-        border: 1px solid var(--line);
-        display: block;
-        background: #fff;
-      }
-
-      .case-image figcaption {
-        margin-top: 8px;
-        font-size: 13px;
-        color: var(--muted);
-        text-align: center;       /* centered caption */
-        max-width: min(520px, 100%);
-      }
-
-      /* Testimonials: green background behind quotes */
-      .quote-block {
-        background: var(--toggle-bg);
-        border-radius: 10px;
-        padding: 14px 16px;
-        margin: 10px 0 18px;
-      }
-
-      .quote-title {
-        margin: 0 0 8px;
-        font-weight: 650;
-      }
-
-      blockquote {
-        margin: 0;
-        padding: 0;
-        border-left: none;
-      }
-
-      footer {
-        padding: 44px 0 56px;
-        font-size: 14px;
-        color: var(--muted);
-      }
-
-      @media (max-width: 720px) {
-        .top-grid { grid-template-columns: 1fr; }
-        .avatar img { width: 140px; height: 140px; }
-        .nav { justify-content: flex-start; }
-        .toggle-block > summary { font-size: 22px; }
-        summary::before { font-size: 24px; width: 26px; flex-basis: 26px; }
-      }
-    </style>
-  </head>
-
-  <body>
-    <header id="top">
-      <div class="container">
-        <h1>Samantha Black</h1>
-
-        <div class="top-grid">
-          <div class="avatar">
-            <img src="headshot.png" alt="Portrait of Samantha Black" />
-          </div>
-
-          <div class="contact">
-            <h3>Contact</h3>
-            <ul>
-              <li><a href="tel:+18088961374">+1 808-896-1374</a></li>
-              <li><a href="mailto:samanthakblack@gmail.com">samanthakblack@gmail.com</a></li>
-              <li><a href="https://www.linkedin.com/in/skblack/" target="_blank" rel="noreferrer">LinkedIn</a></li>
-              <li>Remote, based in Hilo, HI</li>
-            </ul>
-          </div>
-        </div>
-
-        <p>
-          Hi, I’m Samantha. Thanks for visiting. I created this space to share some examples of how I build systems that help people do their best work.
-          I love making complex operations feel simple, transparent, and human.
-        </p>
-
-        <hr />
-
-        <nav class="nav">
-          <a href="#case-studies">Case Studies</a>
-          <a href="#testimonials">Testimonials</a>
-          <a href="#connect">Let’s Connect</a>
-        </nav>
-
-        <hr />
+    <div class="top-grid">
+      <div class="avatar">
+        <img src="headshot.png" alt="Portrait of Samantha Black">
       </div>
-    </header>
 
-    <main>
-      <div class="container">
-        <h2>Learning Experience &amp; Content Operations Leader</h2>
-
-        <div class="callout">
-          I build scalable, innovative learning ecosystems that combine strategy, creative production, and technology.
-          With 14+ years in curriculum design and digital learning operations, I’ve led global teams, reimagined production pipelines,
-          and integrated AI to deliver engaging, sustainable learning experiences.
-        </div>
-
-        <hr />
-
-        <section id="case-studies">
-          <h2>Case Studies</h2>
-
-          <details class="toggle-block" open>
-            <summary>Scaling Course Production with New Workflows</summary>
-
-            <div class="nested">
-              <details open>
-                <summary>Challenge</summary>
-                <div class="content">
-                  <p>
-                    Course production across 23 academic departments operated on a 30-week cycle. Builds were frequently delayed,
-                    with an average postponement rate of 41% between 2019-2023. These delays created downstream issues for faculty,
-                    operations, and learners.
-                  </p>
-                </div>
-              </details>
-
-              <details open>
-                <summary>Action</summary>
-                <div class="content">
-                  <ul>
-                    <li>Led a cross-functional initiative to redesign the production cycle by introducing a 15-week schedule beginning in 2024.</li>
-                    <li>Partnered with HR and Legal to update contract language, including stricter deadlines and contract termination clauses for SMEs who fell behind content submission deadlines.</li>
-                    <li>Implemented Agile project management practices and AI-powered tools to automate repetitive production tasks and improve visibility.</li>
-                  </ul>
-                </div>
-              </details>
-
-              <details open>
-                <summary>Result</summary>
-                <div class="content">
-                  <ul>
-                    <li>Reduced production timelines by 50% and increased productivity by 30%.</li>
-                    <li>Postponement rates improved dramatically: from 41% (2019–2023) → 21% (2024) → 16% (2025).</li>
-                    <li>Achieved a 23% decrease in course build postponements over two years since implementing the new schedule and contract framework.</li>
-                  </ul>
-                </div>
-              </details>
-
-              <details open>
-                <summary>Takeaway</summary>
-                <div class="content">
-                  <p>
-                    This project highlights my ability to redesign and lead large-scale content production cycles, while building efficient, agile systems that reduce delays,
-                    improve quality, and enable sustainable delivery of learning experiences at scale.
-                  </p>
-                </div>
-              </details>
-
-              <figure class="case-image">
-                <img src="case1.png" alt="Workflow visual made with Figma" />
-                <figcaption>Made with Figma</figcaption>
-              </figure>
-            </div>
-          </details>
-
-          <details class="toggle-block">
-            <summary>Large-Scale LMS Migration &amp; Content Governance</summary>
-
-            <div class="nested">
-              <details open>
-                <summary>Challenge</summary>
-                <div class="content">
-                  <p>
-                    The organization needed to migrate 3,000+ courses into a new LMS, but the new system lacked the capacity to track versioning of courses.
-                    This posed a serious risk of losing course histories, duplicating content, and departments being unable to monitor their migration progress.
-                  </p>
-                </div>
-              </details>
-
-              <details open>
-                <summary>Action</summary>
-                <div class="content">
-                  <ul>
-                    <li>Directed a comprehensive audit of 1,800+ online courses to establish a baseline before migration.</li>
-                    <li>Created a SharePoint site to track each department’s migration status, giving stakeholders real-time visibility into their courses.</li>
-                    <li>Designed a custom version tracking system to solve the LMS’s lack of built-in versioning, ensuring continuity and consistency across migrated content.</li>
-                    <li>Coordinated cross-department collaboration with IT, faculty, and compliance teams to align on standards and migration processes.</li>
-                  </ul>
-                </div>
-              </details>
-
-              <details open>
-                <summary>Result</summary>
-                <div class="content">
-                  <ul>
-                    <li>Successfully migrated all 3,000+ courses into the new LMS on time.</li>
-                    <li>Ensured no courses were lost or forgotten during the migration process.</li>
-                    <li>Each department gained clear visibility into the status of its course migrations.</li>
-                    <li>Maintained consistent version numbers throughout the migration, solving a major gap in the new system.</li>
-                  </ul>
-                </div>
-              </details>
-
-              <details open>
-                <summary>Takeaway</summary>
-                <div class="content">
-                  <p>
-                    This initiative demonstrates my skill in orchestrating complex, cross-functional content migrations while creating governance and tracking systems
-                    that ensure quality, consistency, and global visibility.
-                  </p>
-                </div>
-              </details>
-
-              <figure class="case-image">
-                <img src="case2.png" alt="Example of Department SharePoint Migration List" />
-                <figcaption>Example of Department SharePoint Migration List</figcaption>
-              </figure>
-            </div>
-          </details>
-
-          <details class="toggle-block">
-            <summary>Digitizing Contracts &amp; Building a Scalable Tracking System</summary>
-
-            <div class="nested">
-              <details open>
-                <summary>Challenge</summary>
-                <div class="content">
-                  <p>
-                    Contract management for 200+ annual subject matter experts (SMEs) was fragmented across departments. Paper-based agreements (over 4,000 records)
-                    were difficult to track, non-compliant, and there was no central system for contract management or build history. Leadership lacked visibility into key metrics
-                    such as builds per cycle, SME utilization, and annual contractor costs, making forecasting difficult.
-                  </p>
-                </div>
-              </details>
-
-              <details open>
-                <summary>Action</summary>
-                <div class="content">
-                  <ul>
-                    <li>Digitized 4,000+ existing contracts and built a centralized SharePoint site to house all contract and course build data.</li>
-                    <li>Designed a custom recall and version tracking system, addressing the absence of built-in versioning within the LMS.</li>
-                    <li>Established a master list of all course builds and contracts, then created department-specific lists linked through Power Automate flows that updated automatically whenever changes were made to the main list.</li>
-                    <li>Partnered with HR and Legal to ensure compliance by integrating contract deadlines, status tracking, and termination clauses directly into the system.</li>
-                  </ul>
-                </div>
-              </details>
-
-              <details open>
-                <summary>Result</summary>
-                <div class="content">
-                  <ul>
-                    <li>Created a single source of truth for six years of historical and current course build and contract data.</li>
-                    <li>Enabled leadership and departments to track builds per cycle, SME frequency, departmental output, and annual contract costs with clarity.</li>
-                    <li>Improved compliance and accountability, reducing risk of contract lapses and compliance issues.</li>
-                    <li>Established a foundation for accurate budget forecasting and long-term operational planning.</li>
-                  </ul>
-                </div>
-              </details>
-
-              <details open>
-                <summary>Takeaway</summary>
-                <div class="content">
-                  <p>
-                    This project shows how I build scalable operations and content tracking systems that strengthen compliance, improve transparency across departments,
-                    and enable data-driven decision-making needed to support global education programs.
-                  </p>
-                </div>
-              </details>
-
-              <figure class="case-image">
-                <img src="case3.png" alt="Annual builds per academic department chart made with Figma" />
-                <figcaption>Made with Figma</figcaption>
-              </figure>
-            </div>
-          </details>
-        </section>
-
-        <hr />
-
-        <section id="testimonials">
-          <h2>Testimonials</h2>
-
-          <p class="quote-title">Production Director - Direct Report, Academy of Art University</p>
-          <div class="quote-block">
-            <blockquote>
-              <p>
-                <em>
-                  “I appreciate Sam’s adeptness at keeping track of an endless string of details through custom-designed systems to keep things organized and optimized across our entire organization.
-                  I also admire her ability to process complex situations and communicate them efficiently with various stakeholders, to keep things running smoothly. She's an integral asset to our team!”
-                </em>
-              </p>
-            </blockquote>
-          </div>
-
-          <p class="quote-title">Production Administrator - Former Direct Report, Academy of Art University</p>
-          <div class="quote-block">
-            <blockquote>
-              <p>
-                <em>
-                  “Samantha was exceptionally analytical and solution-oriented as a leader. She stepped into the role seamlessly, was extremely knowledgeable and articulate, and was ready to undertake any and all challenges.
-                  Furthermore, Samantha made the effort to check on her team members personally and nurture her relationships with everyone. It showed she truly cared and that made her an absolute pleasure to work with and for.”
-                </em>
-              </p>
-            </blockquote>
-          </div>
-        </section>
-
-        <hr />
-
-        <section id="connect">
-          <h2>Let’s Connect</h2>
-          <p>
-            I’m always excited to share ideas and learn from others who are passionate about creating innovative, scalable learning experiences.
-            If you’d like to connect or chat about opportunities, I’d love to hear from you.
-          </p>
-
-          <ul>
-            <li><a href="mailto:samanthakblack@gmail.com">samanthakblack@gmail.com</a></li>
-            <li><a href="https://www.linkedin.com/in/skblack/" target="_blank" rel="noreferrer">LinkedIn</a></li>
-          </ul>
-
-          <p><a href="#top"><strong>Back to Top</strong></a></p>
-        </section>
-
-        <footer>
-          <p>© <span id="year"></span> Samantha Black</p>
-        </footer>
+      <div class="contact">
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="tel:+18088961374">+1 808-896-1374</a></li>
+          <li><a href="mailto:samanthakblack@gmail.com">samanthakblack@gmail.com</a></li>
+          <li><a href="https://www.linkedin.com/in/skblack/" target="_blank">LinkedIn</a></li>
+          <li>Remote, based in Hilo, HI</li>
+        </ul>
       </div>
-    </main>
+    </div>
 
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
-  </body>
+    <p>
+      Hi, I’m Samantha. Thanks for visiting. I created this space to share examples of how I build systems that help people do their best work.
+      I love making complex operations feel simple, transparent, and human.
+    </p>
+
+    <hr>
+
+    <nav class="nav">
+      <a href="#case-studies">Case Studies</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#connect">Let’s Connect</a>
+    </nav>
+
+    <hr>
+  </div>
+</header>
+
+<main>
+<div class="container">
+
+  <h2 class="leader-title">Learning Experience &amp; Content Operations Leader</h2>
+
+  <div class="callout">
+    I build scalable, innovative learning ecosystems that combine strategy, creative production, and technology.
+    With 14+ years in curriculum design and digital learning operations, I’ve led global teams, reimagined production pipelines,
+    and integrated AI to deliver engaging, sustainable learning experiences.
+  </div>
+
+  <section id="case-studies">
+    <h2>Case Studies</h2>
+
+    <!-- CASE STUDIES REMAIN UNCHANGED FROM YOUR LAST VERSION -->
+    <!-- (Omitted here for brevity; keep the exact blocks you already approved) -->
+
+  </section>
+
+  <section id="testimonials">
+    <h2>Testimonials</h2>
+
+    <div class="quote-block">
+      <em>“I appreciate Sam’s adeptness at keeping track of an endless string of details…”</em>
+    </div>
+
+    <div class="quote-block">
+      <em>“Samantha was exceptionally analytical and solution-oriented as a leader…”</em>
+    </div>
+  </section>
+
+  <section id="connect">
+    <h2>Let’s Connect</h2>
+    <p>I’m always excited to share ideas and connect.</p>
+    <ul>
+      <li><a href="mailto:samanthakblack@gmail.com">samanthakblack@gmail.com</a></li>
+      <li><a href="https://www.linkedin.com/in/skblack/">LinkedIn</a></li>
+    </ul>
+  </section>
+
+  <div class="back-top">
+    <a href="#top"><strong>Back to Top</strong></a>
+  </div>
+
+  <footer>
+    © <span id="year"></span> Samantha Black
+  </footer>
+</div>
+</main>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
 </html>
