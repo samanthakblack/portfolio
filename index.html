@@ -103,7 +103,6 @@
         margin: 8px 0 0;
       }
       .contact li { margin: 8px 0; }
-      .label { color: var(--muted); }
 
       .nav {
         display: flex;
@@ -135,15 +134,15 @@
         align-items: baseline;
       }
 
-      /* Bigger Notion-like caret */
+      /* Bigger Notion-like caret (main) */
       summary::before {
         content: "▸";
-        font-size: 20px;
+        font-size: 26px;          /* bigger */
         line-height: 1;
         color: var(--text);
-        width: 22px;
-        flex: 0 0 22px;
-        transform: translateY(2px);
+        width: 28px;              /* more spacing */
+        flex: 0 0 28px;
+        transform: translateY(3px);
       }
 
       details[open] > summary::before {
@@ -183,12 +182,12 @@
         font-weight: 650;
       }
 
-      /* Slightly smaller caret for nested toggles */
+      /* Nested caret slightly smaller but still prominent */
       .nested summary::before {
-        font-size: 16px;
-        width: 18px;
-        flex: 0 0 18px;
-        transform: translateY(2px);
+        font-size: 20px;
+        width: 22px;
+        flex: 0 0 22px;
+        transform: translateY(3px);
       }
 
       .nested .content {
@@ -202,13 +201,16 @@
       }
       li { margin: 8px 0; }
 
-      /* Images like Notion blocks */
+      /* Images like Notion blocks, but smaller and centered */
       .case-image {
         margin: 18px 0 6px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;      /* centers caption as well */
       }
 
       .case-image img {
-        width: 100%;
+        width: min(520px, 100%);  /* smaller than full column */
         height: auto;
         border-radius: 6px;
         border: 1px solid var(--line);
@@ -217,15 +219,30 @@
       }
 
       .case-image figcaption {
-        margin-top: 6px;
+        margin-top: 8px;
         font-size: 13px;
         color: var(--muted);
+        text-align: center;       /* centered caption */
+        max-width: min(520px, 100%);
+      }
+
+      /* Testimonials: green background behind quotes */
+      .quote-block {
+        background: var(--toggle-bg);
+        border-radius: 10px;
+        padding: 14px 16px;
+        margin: 10px 0 18px;
+      }
+
+      .quote-title {
+        margin: 0 0 8px;
+        font-weight: 650;
       }
 
       blockquote {
-        margin: 14px 0;
-        padding: 8px 0 8px 14px;
-        border-left: 3px solid var(--line);
+        margin: 0;
+        padding: 0;
+        border-left: none;
       }
 
       footer {
@@ -239,6 +256,7 @@
         .avatar img { width: 140px; height: 140px; }
         .nav { justify-content: flex-start; }
         .toggle-block > summary { font-size: 22px; }
+        summary::before { font-size: 24px; width: 26px; flex-basis: 26px; }
       }
     </style>
   </head>
@@ -250,7 +268,6 @@
 
         <div class="top-grid">
           <div class="avatar">
-            <!-- Replace with your actual image filename -->
             <img src="headshot.png" alt="Portrait of Samantha Black" />
           </div>
 
@@ -297,7 +314,6 @@
         <section id="case-studies">
           <h2>Case Studies</h2>
 
-          <!-- Case Study 1 -->
           <details class="toggle-block" open>
             <summary>Scaling Course Production with New Workflows</summary>
 
@@ -352,7 +368,6 @@
             </div>
           </details>
 
-          <!-- Case Study 2 -->
           <details class="toggle-block">
             <summary>Large-Scale LMS Migration &amp; Content Governance</summary>
 
@@ -408,7 +423,6 @@
             </div>
           </details>
 
-          <!-- Case Study 3 -->
           <details class="toggle-block">
             <summary>Digitizing Contracts &amp; Building a Scalable Tracking System</summary>
 
@@ -471,25 +485,29 @@
         <section id="testimonials">
           <h2>Testimonials</h2>
 
-          <p><strong>Production Director - Direct Report, Academy of Art University</strong></p>
-          <blockquote>
-            <p>
-              <em>
-                “I appreciate Sam’s adeptness at keeping track of an endless string of details through custom-designed systems to keep things organized and optimized across our entire organization.
-                I also admire her ability to process complex situations and communicate them efficiently with various stakeholders, to keep things running smoothly. She's an integral asset to our team!”
-              </em>
-            </p>
-          </blockquote>
+          <p class="quote-title">Production Director - Direct Report, Academy of Art University</p>
+          <div class="quote-block">
+            <blockquote>
+              <p>
+                <em>
+                  “I appreciate Sam’s adeptness at keeping track of an endless string of details through custom-designed systems to keep things organized and optimized across our entire organization.
+                  I also admire her ability to process complex situations and communicate them efficiently with various stakeholders, to keep things running smoothly. She's an integral asset to our team!”
+                </em>
+              </p>
+            </blockquote>
+          </div>
 
-          <p><strong>Production Administrator - Former Direct Report, Academy of Art University</strong></p>
-          <blockquote>
-            <p>
-              <em>
-                “Samantha was exceptionally analytical and solution-oriented as a leader. She stepped into the role seamlessly, was extremely knowledgeable and articulate, and was ready to undertake any and all challenges.
-                Furthermore, Samantha made the effort to check on her team members personally and nurture her relationships with everyone. It showed she truly cared and that made her an absolute pleasure to work with and for.”
-              </em>
-            </p>
-          </blockquote>
+          <p class="quote-title">Production Administrator - Former Direct Report, Academy of Art University</p>
+          <div class="quote-block">
+            <blockquote>
+              <p>
+                <em>
+                  “Samantha was exceptionally analytical and solution-oriented as a leader. She stepped into the role seamlessly, was extremely knowledgeable and articulate, and was ready to undertake any and all challenges.
+                  Furthermore, Samantha made the effort to check on her team members personally and nurture her relationships with everyone. It showed she truly cared and that made her an absolute pleasure to work with and for.”
+                </em>
+              </p>
+            </blockquote>
+          </div>
         </section>
 
         <hr />
