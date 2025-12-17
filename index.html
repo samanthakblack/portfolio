@@ -72,7 +72,7 @@
 
     h1{
       font-size:34px;
-      margin:0 0 18px;
+      margin:0 0 34px;   /* was 18px */
       font-weight:700;
       letter-spacing:-.15px;
     }
@@ -100,7 +100,7 @@
 
     /* Make sure avatar never reaches the title area */
     .avatar{
-      margin-top:-30px;
+      margin-top:-12px;  /* was -30px */
     }
     .avatar img{
       width:140px;
@@ -159,11 +159,11 @@
     details[open] > summary::before{content:"▾"}
 
     /* More whitespace between case study blocks */
-    .toggle-block{
+   .toggle-block{
       background:var(--panel);
       border-radius:10px;
       padding:12px 14px;
-      margin:18px 0;           /* increased */
+      margin:28px 0;     /* was 18px */
     }
     .toggle-block:hover{background:var(--panel-hover)}
 
@@ -513,3 +513,4 @@
   </script>
 </body>
 </html>
+
