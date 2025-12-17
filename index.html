@@ -190,51 +190,51 @@
     letter-spacing:-.1px;
   }
 
-  /* Inner toggles */
-  .nested{
-    padding-left:0;
-    margin-top:10px;
-  }
+ /* ===== Inner toggles (Challenge, Action, Result, Takeaway) ===== */
+.nested{
+  padding-left:0;
+  margin-top:10px;
+}
 
-  .nested details{
-    margin:12px 0;
-  }
+.nested details{
+  margin:12px 0;
+}
 
-  .nested details > summary{
-    padding-left:var(--sub-indent);
-    font-size:16px;
-    font-weight:600;
-  }
+/* Keep the label line tight, like Notion */
+.nested details > summary{
+  padding-left:6px;            /* small inset only */
+  font-size:16px;
+  font-weight:600;
+}
 
-  .nested details > summary::before{
-    content:"▸";
-    width:var(--sub-arrow);
-    flex:0 0 var(--sub-arrow);
-    margin-right:var(--sub-gap);
-    font-size:22px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    line-height:1;
-  }
-  .nested details[open] > summary::before{content:"▾"}
+/* Smaller arrow column so everything shifts left */
+.nested details > summary::before{
+  width:22px;
+  flex:0 0 22px;
+  margin-right:10px;
+  font-size:20px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  line-height:1;
+}
 
-  /* Body under label aligns under the label text */
-  .content{
-    margin-top:8px;
-    padding-left:calc(var(--sub-indent) + var(--sub-arrow) + var(--sub-gap));
-  }
+/* Body aligns under the label text (not under the arrow) */
+.content{
+  margin-top:8px;
+  padding-left:calc(6px + 22px + 10px);  /* matches summary (left + arrow + gap) */
+}
 
-  /* Lists: remove the “double indent” */
-  .nested ul{
-    margin:10px 0;
-    padding-left:22px;        /* normal bullet indent */
-    list-style-position:outside;
-  }
-  .nested li{
-    margin:10px 0;
-    padding-left:0;           /* stop pushing text further right */
-  }
+/* Lists align with paragraph text */
+.content ul{
+  margin:10px 0;
+  padding-left:18px;  /* tighter bullets */
+}
+
+.content li{
+  margin:10px 0;
+  padding-left:0;
+}
 
   /* Images */
   .case-image{
@@ -562,6 +562,7 @@
   </script>
 </body>
 </html>
+
 
 
 
