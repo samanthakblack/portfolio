@@ -272,6 +272,43 @@
       .avatar{margin-top:0}     /* no overlap on mobile */
       .nav{justify-content:flex-start;gap:18px}
     }
+    /* ===== Notion-like alignment for inner toggles (Challenge/Action/Result/Takeaway) ===== */
+.nested{
+  padding-left: 0 !important;
+  margin-top: 10px !important;
+}
+
+/* tweak these 3 numbers if you want to fine tune */
+:root{
+  --sub-indent: 18px;  /* how far Challenge is inset */
+  --sub-arrow: 26px;   /* arrow column width */
+  --sub-gap: 12px;     /* space between arrow and label text */
+}
+
+/* inner toggle row */
+.nested details > summary{
+  padding-left: var(--sub-indent) !important;
+}
+
+/* inner arrow */
+.nested details > summary::before{
+  width: var(--sub-arrow) !important;
+  flex: 0 0 var(--sub-arrow) !important;
+  margin-right: var(--sub-gap) !important;
+  font-size: 22px !important;
+}
+
+/* paragraph under Challenge aligns under the word "Challenge" */
+.nested details > .content{
+  padding-left: calc(var(--sub-indent) + var(--sub-arrow) + var(--sub-gap)) !important;
+  margin-top: 8px !important;
+}
+
+/* bullets under Action and Result align with the paragraph */
+.nested details ul{
+  padding-left: calc(var(--sub-indent) + var(--sub-arrow) + var(--sub-gap) + 20px) !important;
+  margin: 10px 0 !important;
+}
   </style>
 </head>
 
@@ -546,6 +583,7 @@
   </script>
 </body>
 </html>
+
 
 
 
