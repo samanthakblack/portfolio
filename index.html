@@ -31,19 +31,6 @@
       line-height:1.65;
     }
 
-    /* ---------- BANNER ---------- */
-    .banner{
-      width:100%;
-      height:200px;
-      background:
-        linear-gradient(
-          rgba(255,255,255,0.6),
-          rgba(255,255,255,0.6)
-        ),
-        url("banner.jpg") center / cover no-repeat;
-      border-bottom:1px solid var(--line);
-    }
-
     .container{
       width:min(var(--max),calc(100% - 32px));
       margin:0 auto;
@@ -54,22 +41,65 @@
       text-decoration:underline;
       text-underline-offset:3px;
     }
+    a:hover{opacity:.9}
 
-    header{padding:20px 0 10px}
+    hr{border:none;border-top:1px solid var(--line);margin:22px 0}
 
-    h1{font-size:34px;margin:0 0 10px;font-weight:700}
+    /* ---------- HERO (Banner + Top Content) ---------- */
+    .hero{
+      position:relative;
+    }
+
+    .banner{
+      width:100%;
+      height:220px;
+
+      /* Fallback gradient ALWAYS shows */
+      background:
+        linear-gradient(180deg, #eef5f0 0%, #f7faf8 100%);
+
+      border-bottom:1px solid var(--line);
+      overflow:hidden;
+    }
+
+    /* Banner image layer (separate so fallback still works if image fails) */
+    .banner::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(rgba(255,255,255,0.58), rgba(255,255,255,0.58)),
+        url("banner.jpg") center / cover no-repeat;
+      /* If banner.jpg is missing, browser just ignores that layer */
+      pointer-events:none;
+    }
+
+    .hero-content{
+      position:relative;
+      padding:18px 0 10px;
+    }
+
+    h1{
+      font-size:34px;
+      margin:0 0 10px;
+      font-weight:700;
+      letter-spacing:-.15px;
+    }
     h2{font-size:22px;margin:26px 0 10px;font-weight:600}
     h3{font-size:17px;margin:18px 0 8px;font-weight:600}
-
     p{margin:12px 0}
-    hr{border:none;border-top:1px solid var(--line);margin:22px 0}
 
     .top-grid{
       display:grid;
       grid-template-columns:180px 1fr;
       gap:26px;
-      margin-top:-80px; /* overlap banner */
       align-items:start;
+      margin:12px 0 0;
+    }
+
+    /* Overlap ONLY the avatar (prevents covering the title) */
+    .avatar{
+      margin-top:-80px;
     }
 
     .avatar img{
@@ -77,8 +107,9 @@
       height:145px;
       border-radius:999px;
       object-fit:cover;
-      border:4px solid white;
-      background:white;
+      border:4px solid #fff;
+      background:#fff;
+      display:block;
     }
 
     .contact ul{list-style:none;padding:0;margin:6px 0}
@@ -88,6 +119,7 @@
       display:flex;
       justify-content:space-between;
       gap:12px;
+      flex-wrap:wrap;
       margin:10px 0;
       font-weight:600;
     }
@@ -120,6 +152,7 @@
       display:flex;
       align-items:center;
       justify-content:center;
+      line-height:1;
     }
     details[open] > summary::before{content:"▾"}
 
@@ -134,27 +167,14 @@
     .toggle-block > summary{
       font-size:19px;
       font-weight:650;
+      letter-spacing:-.1px;
     }
 
-    .nested{
-      padding-left:24px;
-      margin-top:10px;
-    }
+    .nested{padding-left:24px;margin-top:10px}
+    .nested summary{font-size:16px;font-weight:600}
+    .nested summary::before{font-size:24px;width:26px;flex:0 0 26px}
 
-    .nested summary{
-      font-size:16px;
-      font-weight:600;
-    }
-    .nested summary::before{
-      font-size:24px;
-      width:26px;
-      flex:0 0 26px;
-    }
-
-    .content{
-      padding-left:30px;
-      margin-top:8px;
-    }
+    .content{padding-left:30px;margin-top:8px}
 
     ul{padding-left:22px;margin:10px 0}
     li{margin:8px 0}
@@ -171,6 +191,7 @@
       border-radius:6px;
       border:1px solid var(--line);
       background:#fff;
+      display:block;
     }
     .case-image figcaption{
       margin-top:6px;
@@ -180,10 +201,7 @@
     }
 
     /* ---------- TESTIMONIALS ---------- */
-    .quote-title{
-      margin:0 0 8px;
-      font-weight:650;
-    }
+    .quote-title{margin:0 0 8px;font-weight:650}
     .quote-block{
       background:var(--panel);
       border-radius:10px;
@@ -193,11 +211,7 @@
     blockquote{margin:0}
 
     /* ---------- FOOTER ---------- */
-    .back-top{
-      margin:28px 0 0;
-      text-align:center;
-    }
-
+    .back-top{margin:28px 0 0;text-align:center}
     footer{
       padding:26px 0 44px;
       font-size:14px;
@@ -206,82 +220,84 @@
     }
 
     @media(max-width:720px){
-      .top-grid{grid-template-columns:1fr;margin-top:-60px}
+      .top-grid{grid-template-columns:1fr}
       .nav{justify-content:flex-start;gap:18px}
+      .avatar{margin-top:-60px}
     }
   </style>
 </head>
 
 <body>
 
-<div class="banner"></div>
+  <div class="hero">
+    <div class="banner"></div>
 
-<header id="top">
-  <div class="container">
-    <h1>Samantha Black</h1>
+    <header id="top" class="hero-content">
+      <div class="container">
+        <h1>Samantha Black</h1>
 
-    <div class="top-grid">
-      <div class="avatar">
-        <img src="headshot.png" alt="Portrait of Samantha Black">
+        <div class="top-grid">
+          <div class="avatar">
+            <img src="headshot.png" alt="Portrait of Samantha Black">
+          </div>
+
+          <div class="contact">
+            <h3>Contact</h3>
+            <ul>
+              <li><a href="tel:+18088961374">+1 808-896-1374</a></li>
+              <li><a href="mailto:samanthakblack@gmail.com">samanthakblack@gmail.com</a></li>
+              <li><a href="https://www.linkedin.com/in/skblack/" target="_blank" rel="noreferrer">LinkedIn</a></li>
+              <li>Remote, based in Hilo, HI</li>
+            </ul>
+          </div>
+        </div>
+
+        <p>
+          Hi, I’m Samantha. Thanks for visiting. I created this space to share some examples of how I build systems that help people do their best work.
+          I love making complex operations feel simple, transparent, and human.
+        </p>
+
+        <hr>
+
+        <nav class="nav">
+          <a href="#case-studies">Case Studies</a>
+          <a href="#testimonials">Testimonials</a>
+          <a href="#connect">Let’s Connect</a>
+        </nav>
+
+        <hr>
       </div>
-
-      <div class="contact">
-        <h3>Contact</h3>
-        <ul>
-          <li><a href="tel:+18088961374">+1 808-896-1374</a></li>
-          <li><a href="mailto:samanthakblack@gmail.com">samanthakblack@gmail.com</a></li>
-          <li><a href="https://www.linkedin.com/in/skblack/" target="_blank">LinkedIn</a></li>
-          <li>Remote, based in Hilo, HI</li>
-        </ul>
-      </div>
-    </div>
-
-    <p>
-      Hi, I’m Samantha. Thanks for visiting. I created this space to share examples of how I build systems that help people do their best work.
-      I love making complex operations feel simple, transparent, and human.
-    </p>
-
-    <hr>
-
-    <nav class="nav">
-      <a href="#case-studies">Case Studies</a>
-      <a href="#testimonials">Testimonials</a>
-      <a href="#connect">Let’s Connect</a>
-    </nav>
-
-    <hr>
+    </header>
   </div>
-</header>
 
-<main>
-<div class="container">
+  <main>
+    <div class="container">
 
-<h2 class="leader-title">Learning Experience &amp; Content Operations Leader</h2>
+      <h2 class="leader-title">Learning Experience &amp; Content Operations Leader</h2>
 
-<div class="callout">
-  I build scalable, innovative learning ecosystems that combine strategy, creative production, and technology.
-  With 14+ years in curriculum design and digital learning operations, I’ve led global teams, reimagined production pipelines,
-  and integrated AI to deliver engaging, sustainable learning experiences.
-</div>
+      <div class="callout">
+        I build scalable, innovative learning ecosystems that combine strategy, creative production, and technology.
+        With 14+ years in curriculum design and digital learning operations, I’ve led global teams, reimagined production pipelines,
+        and integrated AI to deliver engaging, sustainable learning experiences.
+      </div>
 
-<!-- CASE STUDIES, TESTIMONIALS, CONNECT SECTIONS CONTINUE UNCHANGED -->
-<!-- (Keep the exact case study blocks you already approved here) -->
+      <hr>
 
-<div class="back-top">
-  <a href="#top"><strong>Back to Top</strong></a>
-</div>
+      <!-- KEEP YOUR CASE STUDIES / TESTIMONIALS / CONNECT SECTIONS BELOW THIS LINE -->
+      <!-- Paste your existing sections here exactly as-is (the toggle blocks etc.) -->
 
-<footer>
-  © <span id="year"></span> Samantha Black
-</footer>
+      <div class="back-top">
+        <a href="#top"><strong>Back to Top</strong></a>
+      </div>
 
-</div>
-</main>
+      <footer>
+        © <span id="year"></span> Samantha Black
+      </footer>
+    </div>
+  </main>
 
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
-
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
-
