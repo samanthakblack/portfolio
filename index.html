@@ -173,13 +173,20 @@
       letter-spacing:-.1px;
     }
 
-    .nested{padding-left:24px;margin-top:10px}
+    .nested{
+      padding-left:32px; /* aligns everything cleanly under label */
+      margin-top:10px;
+    }
+    .nested ul{
+      padding-left:20px;
+    }
     .nested details{margin:10px 0}
     .nested summary{font-size:16px;font-weight:600}
     .nested summary::before{font-size:24px;width:26px;flex:0 0 26px}
 
     .content{
-      padding-left:14px;
+      padding-left:0;
+      margin-top:8px;
     }
 
     ul{padding-left:22px;margin:10px 0}
@@ -515,6 +522,7 @@
   </script>
 </body>
 </html>
+
 
 
 
