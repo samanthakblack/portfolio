@@ -7,275 +7,288 @@
   <meta name="description" content="Samantha Black. Learning Experience and Content Operations Leader." />
 
   <style>
-    :root{
-      --bg:#ffffff;
-      --text:#37352f;
-      --muted:rgba(55,53,47,.6);
-      --line:rgba(55,53,47,.12);
-      --link:#7fa68a;
-      --panel:#eef5f0;
-      --panel-hover:#e7f0ea;
+  :root{
+    --bg:#ffffff;
+    --text:#37352f;
+    --muted:rgba(55,53,47,.6);
+    --line:rgba(55,53,47,.12);
+    --link:#7fa68a;
+    --panel:#eef5f0;
+    --panel-hover:#e7f0ea;
 
-      --max:760px;
-      --font:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial;
+    --max:760px;
+    --font:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial;
 
-      /* Case study inner toggle alignment */
-      --sub-indent: 18px;  /* inset for Challenge and Action rows */
-      --sub-arrow: 26px;   /* arrow column width */
-      --sub-gap: 12px;     /* gap between arrow and label */
-    }
+    /* Case study inner toggle alignment */
+    --sub-indent: 18px;  /* inset for Challenge and Action rows */
+    --sub-arrow: 26px;   /* arrow column width */
+    --sub-gap: 12px;     /* gap between arrow and label */
+  }
 
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
 
-    body{
-      margin:0;
-      background:var(--bg);
-      color:var(--text);
-      font-family:var(--font);
-      font-size:16px;
-      line-height:1.65;
-    }
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--font);
+    font-size:16px;
+    line-height:1.65;
+  }
 
-    .container{
-      width:min(var(--max),calc(100% - 32px));
-      margin:0 auto;
-    }
+  .container{
+    width:min(var(--max),calc(100% - 32px));
+    margin:0 auto;
+  }
 
-    a{
-      color:var(--link);
-      text-decoration:underline;
-      text-underline-offset:3px;
-    }
-    a:hover{opacity:.9}
+  a{
+    color:var(--link);
+    text-decoration:underline;
+    text-underline-offset:3px;
+  }
+  a:hover{opacity:.9}
 
-    hr{
-      border:none;
-      border-top:1px solid var(--line);
-      margin:24px 0;
-    }
+  hr{
+    border:none;
+    border-top:1px solid var(--line);
+    margin:24px 0;
+  }
 
-    /* Banner */
-    .banner{
-      width:100%;
-      height:220px;
-      position:relative;
-      border-bottom:1px solid var(--line);
-      background:linear-gradient(180deg, #eef5f0 0%, #f7faf8 100%);
-      overflow:hidden;
-    }
-    .banner::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:
-        linear-gradient(rgba(255,255,255,0.18), rgba(255,255,255,0.18)),
-        url("banner.png") center / cover no-repeat;
-      pointer-events:none;
-    }
+  /* Banner */
+  .banner{
+    width:100%;
+    height:220px;
+    position:relative;
+    border-bottom:1px solid var(--line);
+    background:linear-gradient(180deg, #eef5f0 0%, #f7faf8 100%);
+    overflow:hidden;
+  }
+  .banner::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+      linear-gradient(rgba(255,255,255,0.18), rgba(255,255,255,0.18)),
+      url("banner.png") center / cover no-repeat;
+    pointer-events:none;
+  }
 
-    header{padding:18px 0 10px}
+  header{padding:18px 0 10px}
 
-    h1{
-      font-size:34px;
-      margin:0 0 34px; /* extra space between name and photo */
-      font-weight:700;
-      letter-spacing:-.15px;
-    }
+  h1{
+    font-size:34px;
+    margin:0 0 34px; /* extra space between name and photo */
+    font-weight:700;
+    letter-spacing:-.15px;
+  }
 
-    h2{
-      font-size:22px;
-      margin:14px 0 12px; /* reduced space above sections */
-      font-weight:600;
-      letter-spacing:-.05px;
-    }
+  h2{
+    font-size:22px;
+    margin:14px 0 12px; /* reduced space above sections */
+    font-weight:600;
+    letter-spacing:-.05px;
+  }
 
-    h3{
-      font-size:17px;
-      margin:0 0 8px;
-      font-weight:600;
-    }
+  h3{
+    font-size:17px;
+    margin:0 0 8px;
+    font-weight:600;
+  }
 
-    p{margin:12px 0}
+  p{margin:12px 0}
 
-    /* Top layout */
-    .top-grid{
-      display:grid;
-      grid-template-columns:180px 1fr;
-      gap:26px;
-      align-items:start;
-      margin-top:6px;
-    }
+  /* Top layout */
+  .top-grid{
+    display:grid;
+    grid-template-columns:180px 1fr;
+    gap:26px;
+    align-items:start;
+    margin-top:6px;
+  }
 
-    .avatar{
-      margin-top:-12px; /* keeps photo closer to its own row and away from name */
-    }
-    .avatar img{
-      width:140px;
-      height:140px;
-      border-radius:999px;
-      object-fit:cover;
-      border:4px solid #fff;
-      background:#fff;
-      display:block;
-    }
+  .avatar{
+    margin-top:-12px; /* keeps photo closer to its own row and away from name */
+  }
+  .avatar img{
+    width:140px;
+    height:140px;
+    border-radius:999px;
+    object-fit:cover;
+    border:4px solid #fff;
+    background:#fff;
+    display:block;
+  }
 
-    .contact ul{list-style:none;padding:0;margin:0}
-    .contact li{margin:6px 0}
+  .contact ul{list-style:none;padding:0;margin:0}
+  .contact li{margin:6px 0}
 
-    .intro{
-      margin-top:22px; /* more space after contact before intro */
-    }
+  .intro{
+    margin-top:22px; /* more space after contact before intro */
+  }
 
-    .nav{
-      display:flex;
-      justify-content:space-between;
-      gap:12px;
-      flex-wrap:wrap;
-      margin:12px 0;
-      font-weight:600;
-    }
+  .nav{
+    display:flex;
+    justify-content:space-between;
+    gap:12px;
+    flex-wrap:wrap;
+    margin:12px 0;
+    font-weight:600;
+  }
 
-    .callout{
-      background:var(--panel);
-      padding:14px 16px;
-      border-radius:10px;
-      margin:10px 0 2px;
-    }
+  .callout{
+    background:var(--panel);
+    padding:14px 16px;
+    border-radius:10px;
+    margin:10px 0 2px;
+  }
 
-    /* Case study blocks spacing */
-    #case-studies h2{margin-bottom:26px}
-    .toggle-block{
-      background:var(--panel);
-      border-radius:10px;
-      padding:12px 14px;
-      margin:28px 0; /* more whitespace between each study */
-    }
-    .toggle-block:hover{background:var(--panel-hover)}
+  /* =========================
+     CASE STUDIES (FIXED)
+     ========================= */
 
-    /* Outer toggle (the case study title) */
-    summary{
-      list-style:none;
-      cursor:pointer;
-      display:flex;
-      align-items:center;
-      gap:10px;
-      user-select:none;
-    }
-    summary::-webkit-details-marker{display:none}
+  #case-studies h2{margin-bottom:26px}
 
-    summary::before{
-      content:"▸";
-      font-size:30px;
-      width:32px;
-      flex:0 0 32px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      line-height:1;
-    }
-    details[open] > summary::before{content:"▾"}
+  .toggle-block{
+    background:var(--panel);
+    border-radius:10px;
+    padding:12px 14px;
+    margin:28px 0; /* more whitespace between each study */
+  }
+  .toggle-block:hover{background:var(--panel-hover)}
 
-    .toggle-block > summary{
-      font-size:19px;
-      font-weight:650;
-      letter-spacing:-.1px;
-    }
+  /* IMPORTANT: Do NOT style all summary elements globally.
+     Scope summary styling to the case studies only. */
+  .toggle-block summary,
+  .nested summary{
+    list-style:none;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    user-select:none;
+  }
+  .toggle-block summary::-webkit-details-marker,
+  .nested summary::-webkit-details-marker{display:none}
 
-    /* ===== Inner toggles (Challenge, Action, Result, Takeaway) ===== */
-    .nested{
-      padding-left:0;
-      margin-top:10px;
-    }
+  /* Outer toggle arrow */
+  .toggle-block > summary::before{
+    content:"▸";
+    font-size:30px;
+    width:32px;
+    flex:0 0 32px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    line-height:1;
+  }
+  .toggle-block[open] > summary::before{content:"▾"}
 
-    .nested details{
-      margin:12px 0;
-    }
+  .toggle-block > summary{
+    font-size:19px;
+    font-weight:650;
+    letter-spacing:-.1px;
+  }
 
-    .nested details > summary{
-      padding-left:var(--sub-indent);
-      font-size:16px;
-      font-weight:600;
-    }
+  /* Inner toggles */
+  .nested{
+    padding-left:0;
+    margin-top:10px;
+  }
 
-    .nested details > summary::before{
-      width:var(--sub-arrow);
-      flex:0 0 var(--sub-arrow);
-      margin-right:var(--sub-gap);
-      font-size:22px;
-      justify-content:center;
-    }
+  .nested details{
+    margin:12px 0;
+  }
 
-    /* Body under label aligns under the label text */
-    .content{
-      margin-top:8px;
-      padding-left:calc(var(--sub-indent) + 8px);
-    }
+  .nested details > summary{
+    padding-left:var(--sub-indent);
+    font-size:16px;
+    font-weight:600;
+  }
 
-    /* Lists align with content */
-    .nested ul{
-      margin:10px 0;
-      padding-left:20px;          /* REMOVE browser default */
-      list-style-position:outside;
-    }
-    
-    .nested li{
-      margin:10px 0;
-      padding-left:18px;       /* controls bullet-to-text spacing */
-    }
+  .nested details > summary::before{
+    content:"▸";
+    width:var(--sub-arrow);
+    flex:0 0 var(--sub-arrow);
+    margin-right:var(--sub-gap);
+    font-size:22px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    line-height:1;
+  }
+  .nested details[open] > summary::before{content:"▾"}
 
-    /* Images */
-    .case-image{
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      margin:18px 0 6px;
-    }
-    .case-image img{
-      width:min(480px,100%);
-      border-radius:6px;
-      border:1px solid var(--line);
-      background:#fff;
-      display:block;
-    }
-    .case-image figcaption{
-      margin-top:6px;
-      font-size:13px;
-      color:var(--muted);
-      text-align:center;
-      max-width:min(480px,100%);
-    }
+  /* Body under label aligns under the label text */
+  .content{
+    margin-top:8px;
+    padding-left:calc(var(--sub-indent) + var(--sub-arrow) + var(--sub-gap));
+  }
 
-    /* Testimonials */
-    #testimonials h2{margin-bottom:22px} /* more space after header */
-    .quote-title{margin:0 0 10px;font-weight:650}
-    .quote-block{
-      background:var(--panel);
-      border-radius:10px;
-      padding:14px 16px;
-      margin:12px 0 20px;
-    }
-    blockquote{margin:0}
-    blockquote p{margin:0}
+  /* Lists: remove the “double indent” */
+  .nested ul{
+    margin:10px 0;
+    padding-left:22px;        /* normal bullet indent */
+    list-style-position:outside;
+  }
+  .nested li{
+    margin:10px 0;
+    padding-left:0;           /* stop pushing text further right */
+  }
 
-    .back-top{
-      margin:34px 0 0;
-      text-align:center;
-    }
+  /* Images */
+  .case-image{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    margin:18px 0 6px;
+  }
+  .case-image img{
+    width:min(480px,100%);
+    border-radius:6px;
+    border:1px solid var(--line);
+    background:#fff;
+    display:block;
+  }
+  .case-image figcaption{
+    margin-top:6px;
+    font-size:13px;
+    color:var(--muted);
+    text-align:center;
+    max-width:min(480px,100%);
+  }
 
-    footer{
-      padding:28px 0 44px;
-      font-size:14px;
-      color:var(--muted);
-      text-align:center;
-    }
+  /* Testimonials */
+  #testimonials h2{margin-bottom:22px} /* more space after header */
+  .quote-title{margin:0 0 10px;font-weight:650}
+  .quote-block{
+    background:var(--panel);
+    border-radius:10px;
+    padding:14px 16px;
+    margin:12px 0 20px;
+  }
+  blockquote{margin:0}
+  blockquote p{margin:0}
 
-    @media(max-width:720px){
-      .top-grid{grid-template-columns:1fr}
-      .avatar{margin-top:0}
-      .nav{justify-content:flex-start;gap:18px}
-    }
-  </style>
+  .back-top{
+    margin:34px 0 0;
+    text-align:center;
+  }
+
+  footer{
+    padding:28px 0 44px;
+    font-size:14px;
+    color:var(--muted);
+    text-align:center;
+  }
+
+  @media(max-width:720px){
+    .top-grid{grid-template-columns:1fr}
+    .avatar{margin-top:0}
+    .nav{justify-content:flex-start;gap:18px}
+  }
+</style>
+
 </head>
 
 <body>
@@ -549,6 +562,7 @@
   </script>
 </body>
 </html>
+
 
 
 
