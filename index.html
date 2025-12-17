@@ -209,15 +209,20 @@
     /* Body under label aligns under the label text */
     .content{
       margin-top:8px;
-      padding-left:calc(var(--sub-indent) + var(--sub-arrow) + var(--sub-gap));
+      padding-left:calc(var(--sub-indent) + 8px);
     }
 
     /* Lists align with content */
     .nested ul{
       margin:10px 0;
-      padding-left:calc(var(--sub-indent) + var(--sub-arrow) + var(--sub-gap) + 20px);
+      padding-left:0;          /* REMOVE browser default */
+      list-style-position:outside;
     }
-    .nested li{margin:12px 0}
+    
+    .nested li{
+      margin:10px 0;
+      padding-left:18px;       /* controls bullet-to-text spacing */
+    }
 
     /* Images */
     .case-image{
@@ -544,3 +549,4 @@
   </script>
 </body>
 </html>
+
