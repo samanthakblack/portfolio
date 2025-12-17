@@ -6,265 +6,435 @@
     <title>Samantha Black | Learning Experience & Content Operations Leader</title>
     <meta
       name="description"
-      content="Learning Experience & Content Operations Leader. I build scalable learning ecosystems that combine strategy, creative production, and technology."
+      content="Samantha Black. Learning Experience & Content Operations Leader. I build scalable, innovative learning ecosystems that combine strategy, creative production, and technology."
     />
-    <link rel="stylesheet" href="styles.css" />
+
+    <style>
+      :root{
+        --bg: #ffffff;
+        --text: #2f3437;
+        --muted: rgba(55, 53, 47, 0.65);
+        --line: rgba(55, 53, 47, 0.12);
+        --link: #0b6bcb;
+        --callout-bg: rgba(55, 53, 47, 0.06);
+        --max: 780px;
+        --font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial;
+      }
+
+      *{ box-sizing: border-box; }
+      html{ scroll-behavior: smooth; }
+
+      body{
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--font);
+        line-height: 1.6;
+        font-size: 16px;
+      }
+
+      .container{
+        width: min(var(--max), calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      a{ color: var(--link); text-decoration: none; }
+      a:hover{ text-decoration: underline; }
+
+      header{
+        padding: 44px 0 10px;
+      }
+
+      h1{
+        margin: 0 0 10px;
+        font-size: 40px;
+        line-height: 1.2;
+        font-weight: 700;
+      }
+
+      h2{
+        margin: 34px 0 10px;
+        font-size: 26px;
+        line-height: 1.25;
+      }
+
+      h3{
+        margin: 22px 0 8px;
+        font-size: 20px;
+        line-height: 1.3;
+      }
+
+      h4{
+        margin: 14px 0 6px;
+        font-size: 15px;
+        line-height: 1.35;
+        font-weight: 600;
+        color: var(--text);
+      }
+
+      p{ margin: 10px 0; }
+      .muted{ color: var(--muted); }
+
+      hr{
+        border: none;
+        border-top: 1px solid var(--line);
+        margin: 22px 0;
+      }
+
+      .nav{
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+        margin: 14px 0 6px;
+        padding: 0;
+      }
+
+      .nav a{
+        padding: 6px 10px;
+        border-radius: 6px;
+      }
+
+      .nav a:hover{
+        background: rgba(55, 53, 47, 0.06);
+        text-decoration: none;
+      }
+
+      .avatar{
+        margin: 12px 0 10px;
+      }
+
+      .avatar img{
+        width: 120px;
+        height: 120px;
+        border-radius: 999px;
+        object-fit: cover;
+        display: block;
+        background: #fff;
+      }
+
+      .contact{
+        margin-top: 14px;
+      }
+
+      .contact h3{
+        margin-top: 0;
+      }
+
+      .contact ul{
+        list-style: none;
+        padding: 0;
+        margin: 8px 0 0;
+      }
+
+      .contact li{
+        margin: 6px 0;
+        color: var(--text);
+      }
+
+      .contact .label{
+        color: var(--muted);
+        margin-right: 8px;
+      }
+
+      .callout{
+        background: var(--callout-bg);
+        border-radius: 8px;
+        padding: 14px 14px;
+        margin: 16px 0 8px;
+      }
+
+      .case{
+        margin: 18px 0 28px;
+      }
+
+      .case ul{
+        margin: 8px 0 0;
+        padding-left: 22px;
+      }
+
+      .case li{
+        margin: 6px 0;
+      }
+
+      figure{
+        margin: 12px 0 0;
+      }
+
+      figure img{
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        border: 1px solid var(--line);
+        display: block;
+        background: #fff;
+      }
+
+      figcaption{
+        margin-top: 6px;
+        font-size: 13px;
+        color: var(--muted);
+      }
+
+      blockquote{
+        margin: 12px 0;
+        padding: 10px 14px;
+        border-left: 3px solid var(--line);
+        color: var(--text);
+      }
+
+      .button-row{
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 10px;
+      }
+
+      .button{
+        display: inline-block;
+        padding: 8px 12px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        color: var(--text);
+        background: #fff;
+      }
+
+      .button:hover{
+        background: rgba(55, 53, 47, 0.06);
+        text-decoration: none;
+      }
+
+      footer{
+        padding: 28px 0 40px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .back-top{
+        margin-top: 16px;
+      }
+    </style>
   </head>
 
   <body>
-    <a class="skip" href="#main">Skip to content</a>
-
-    <header class="site-header">
+    <header id="top">
       <div class="container">
-        <div class="top">
-          <div class="identity">
-            <div class="avatar" aria-hidden="true">
-              <!-- Replace with your headshot file path -->
-              <img src="headshot.png" alt="Portrait of Samantha Black" />
-            </div>
+        <h1>Samantha Black</h1>
 
-            <div>
-              <h1>Samantha Black</h1>
-              <p class="subtitle">Learning Experience &amp; Content Operations Leader</p>
-              <p class="lede">
-                Hi, I’m Samantha. Thanks for visiting. I created this space to share examples of how I build systems that
-                help people do their best work. I love making complex operations feel simple, transparent, and human.
-              </p>
-            </div>
-          </div>
-
-          <div class="contact card" aria-label="Contact information">
-            <h2>Contact</h2>
-            <ul class="contact-list">
-              <li><span class="label">Phone</span><a href="tel:+18088961374">+1 808 896 1374</a></li>
-              <li><span class="label">Email</span><a href="mailto:samanthakblack@gmail.com">samanthakblack@gmail.com</a></li>
-              <li><span class="label">LinkedIn</span><a href="https://www.linkedin.com/in/skblack/" target="_blank" rel="noreferrer">linkedin.com/in/skblack</a></li>
-              <li><span class="label">Location</span><span>Remote, based in Hilo, HI</span></li>
-            </ul>
-          </div>
+        <!-- Replace headshot.png with your image filename -->
+        <div class="avatar">
+          <img src="headshot.png" alt="Portrait of Samantha Black" />
         </div>
 
+        <div class="contact">
+          <h3>Contact</h3>
+          <ul>
+            <li><span class="label">Phone</span><a href="tel:+18088961374">+1 808 896 1374</a></li>
+            <li><span class="label">Email</span><a href="mailto:samanthakblack@gmail.com">samanthakblack@gmail.com</a></li>
+            <li>
+              <span class="label">LinkedIn</span>
+              <a href="https://www.linkedin.com/in/skblack/" target="_blank" rel="noreferrer">LinkedIn</a>
+            </li>
+            <li><span class="label">Location</span><span>Remote, based in Hilo, HI</span></li>
+          </ul>
+        </div>
+
+        <p>
+          Hi, I’m Samantha. Thanks for visiting. I created this space to share some examples of how I build systems that help people do their best work.
+          I love making complex operations feel simple, transparent, and human.
+        </p>
+
+        <hr />
+
         <nav class="nav">
-          <a href="#case-studies">Case Studies</a>
-          <a href="#testimonials">Testimonials</a>
-          <a href="#connect">Let’s Connect</a>
+          <a href="#case-studies"><strong>Case Studies</strong></a>
+          <a href="#testimonials"><strong>Testimonials</strong></a>
+          <a href="#connect"><strong>Let’s Connect</strong></a>
         </nav>
+
+        <hr />
       </div>
     </header>
 
-    <main id="main" class="container">
-      <section class="callout" aria-label="Executive summary">
-        <p>
-          I build scalable, innovative learning ecosystems that combine strategy, creative production, and technology.
-          With 14+ years in curriculum design and digital learning operations, I’ve led global teams, reimagined
-          production pipelines, and integrated AI to deliver engaging, sustainable learning experiences.
-        </p>
-      </section>
+    <main>
+      <div class="container">
+        <h2>Learning Experience &amp; Content Operations Leader</h2>
 
-      <section id="case-studies" class="section">
-        <div class="section-head">
-          <h2>Case Studies</h2>
-          <p class="muted">A few examples of systems leadership, operational design, and measurable impact.</p>
-        </div>
-
-        <article class="case card">
-          <h3>Scaling Course Production with New Workflows</h3>
-
-          <div class="grid">
-            <div>
-              <h4>Challenge</h4>
-              <p>
-                Course production across 23 academic departments operated on a 30 week cycle. Builds were frequently
-                delayed, with an average postponement rate of 41% between 2019 and 2023. These delays created downstream
-                issues for faculty, operations, and learners.
-              </p>
-            </div>
-
-            <div>
-              <h4>Action</h4>
-              <ul>
-                <li>Led a cross functional initiative to redesign the production cycle by introducing a 15 week schedule beginning in 2024.</li>
-                <li>Partnered with HR and Legal to update contract language, including stricter deadlines and contract termination clauses for SMEs who fell behind content submission deadlines.</li>
-                <li>Implemented Agile project management practices and AI powered tools to automate repetitive production tasks and improve visibility.</li>
-              </ul>
-            </div>
-
-            <div>
-              <h4>Result</h4>
-              <ul>
-                <li>Reduced production timelines by 50% and increased productivity by 30%.</li>
-                <li>Postponement rates improved from 41% in 2019 to 2023 to 21% in 2024 to 16% in 2025.</li>
-                <li>Achieved a 23% decrease in course build postponements over two years since implementing the new schedule and contract framework.</li>
-              </ul>
-            </div>
-
-            <div>
-              <h4>Takeaway</h4>
-              <p>
-                This project highlights my ability to redesign and lead large scale content production cycles, while
-                building efficient, agile systems that reduce delays, improve quality, and enable sustainable delivery
-                of learning experiences at scale.
-              </p>
-            </div>
-          </div>
-
-          <figure class="media">
-            <img src="case1.png" alt="Workflow visual made with Figma" />
-            <figcaption>Made with Figma</figcaption>
-          </figure>
-        </article>
-
-        <article class="case card">
-          <h3>Large Scale LMS Migration and Content Governance</h3>
-
-          <div class="grid">
-            <div>
-              <h4>Challenge</h4>
-              <p>
-                The organization needed to migrate 3,000+ courses into a new LMS, but the new system lacked the capacity
-                to track versioning of courses. This posed a serious risk of losing course histories, duplicating
-                content, and departments being unable to monitor their migration progress.
-              </p>
-            </div>
-
-            <div>
-              <h4>Action</h4>
-              <ul>
-                <li>Directed a comprehensive audit of 1,800+ online courses to establish a baseline before migration.</li>
-                <li>Created a SharePoint site to track each department’s migration status, giving stakeholders real time visibility into their courses.</li>
-                <li>Designed a custom version tracking system to solve the LMS’s lack of built in versioning, ensuring continuity and consistency across migrated content.</li>
-                <li>Coordinated cross department collaboration with IT, faculty, and compliance teams to align on standards and migration processes.</li>
-              </ul>
-            </div>
-
-            <div>
-              <h4>Result</h4>
-              <ul>
-                <li>Successfully migrated all 3,000+ courses into the new LMS on time.</li>
-                <li>Ensured no courses were lost or forgotten during the migration process.</li>
-                <li>Each department gained clear visibility into the status of its course migrations.</li>
-                <li>Maintained consistent version numbers throughout the migration, solving a major gap in the new system.</li>
-              </ul>
-            </div>
-
-            <div>
-              <h4>Takeaway</h4>
-              <p>
-                This initiative demonstrates my skill in orchestrating complex cross functional content migrations while
-                creating governance and tracking systems that ensure quality, consistency, and global visibility.
-              </p>
-            </div>
-          </div>
-
-          <figure class="media">
-            <img src="case2.png" alt="Example of department SharePoint migration list" />
-            <figcaption>Example of Department SharePoint Migration List</figcaption>
-          </figure>
-        </article>
-
-        <article class="case card">
-          <h3>Digitizing Contracts and Building a Scalable Tracking System</h3>
-
-          <div class="grid">
-            <div>
-              <h4>Challenge</h4>
-              <p>
-                Contract management for 200+ annual subject matter experts was fragmented across departments. Paper
-                based agreements, over 4,000 records, were difficult to track and non compliant. There was no central
-                system for contract management or build history. Leadership lacked visibility into key metrics for
-                forecasting budgets and allocating resources.
-              </p>
-            </div>
-
-            <div>
-              <h4>Action</h4>
-              <ul>
-                <li>Digitized 4,000+ existing contracts and built a centralized SharePoint site to house all contract and course build data.</li>
-                <li>Designed a custom recall and version tracking system, addressing the absence of built in versioning within the LMS.</li>
-                <li>Established a master list of all course builds and contracts, then created department specific lists linked through Power Automate flows that updated automatically whenever changes were made to the main list.</li>
-                <li>Partnered with HR and Legal to ensure compliance by integrating contract deadlines, status tracking, and termination clauses directly into the system.</li>
-              </ul>
-            </div>
-
-            <div>
-              <h4>Result</h4>
-              <ul>
-                <li>Created a single source of truth for six years of historical and current course build and contract data.</li>
-                <li>Enabled leadership and departments to track builds per cycle, SME frequency, departmental output, and annual contract costs with clarity.</li>
-                <li>Improved compliance and accountability, reducing risk of contract lapses and compliance issues.</li>
-                <li>Established a foundation for accurate budget forecasting and long term operational planning.</li>
-              </ul>
-            </div>
-
-            <div>
-              <h4>Takeaway</h4>
-              <p>
-                This project shows how I build scalable operations and content tracking systems that strengthen
-                compliance, improve transparency, and enable data informed decisions across an education ecosystem.
-              </p>
-            </div>
-          </div>
-
-          <figure class="media">
-            <img src="case3.png" alt="Annual builds per academic department chart made with Figma" />
-            <figcaption>Made with Figma</figcaption>
-          </figure>
-        </article>
-      </section>
-
-      <section id="testimonials" class="section">
-        <div class="section-head">
-          <h2>Testimonials</h2>
-        </div>
-
-        <div class="two-col">
-          <blockquote class="quote card">
-            <p>
-              “I appreciate Sam’s adeptness at keeping track of an endless string of details through custom designed
-              systems to keep things organized and optimized across our entire organization. I also admire her ability
-              to process complex situations and communicate them efficiently with various stakeholders, to keep things
-              running smoothly. She's an integral asset to our team.”
-            </p>
-            <footer>Production Director, Direct Report, Academy of Art University</footer>
-          </blockquote>
-
-          <blockquote class="quote card">
-            <p>
-              “Samantha was exceptionally analytical and solution oriented as a leader. She stepped into the role
-              seamlessly, was extremely knowledgeable and articulate, and was ready to undertake any and all challenges.
-              Furthermore, Samantha made the effort to check on her team members personally and nurture her
-              relationships with everyone. It showed she truly cared and that made her an absolute pleasure to work with
-              and for.”
-            </p>
-            <footer>Production Administrator, Former Direct Report, Academy of Art University</footer>
-          </blockquote>
-        </div>
-      </section>
-
-      <section id="connect" class="section">
-        <div class="section-head">
-          <h2>Let’s Connect</h2>
+        <div class="callout">
           <p>
-            I’m always excited to share ideas and learn from others who are passionate about creating innovative,
-            scalable learning experiences. If you’d like to connect or chat about opportunities, I’d love to hear from
-            you.
+            I build scalable, innovative learning ecosystems that combine strategy, creative production, and technology.
+            With 14+ years in curriculum design and digital learning operations, I’ve led global teams, reimagined production pipelines,
+            and integrated AI to deliver engaging, sustainable learning experiences.
           </p>
         </div>
 
-        <div class="card connect">
-          <a class="button" href="mailto:samanthakblack@gmail.com">Email me</a>
-          <a class="button secondary" href="https://www.linkedin.com/in/skblack/" target="_blank" rel="noreferrer">Connect on LinkedIn</a>
-        </div>
+        <hr />
 
-        <p class="back-top"><a href="#top">Back to top</a></p>
-      </section>
-    </main>
+        <section id="case-studies">
+          <h2>Case Studies</h2>
 
-    <footer class="site-footer">
-      <div class="container">
-        <p>© <span id="year"></span> Samantha Black</p>
+          <article class="case">
+            <h3>Scaling Course Production with New Workflows</h3>
+
+            <h4>Challenge</h4>
+            <p>
+              Course production across 23 academic departments operated on a 30-week cycle. Builds were frequently delayed, with an average postponement rate
+              of 41% between 2019-2023. These delays created downstream issues for faculty, operations, and learners.
+            </p>
+
+            <h4>Action</h4>
+            <ul>
+              <li>Led a cross-functional initiative to redesign the production cycle by introducing a 15-week schedule beginning in 2024.</li>
+              <li>Partnered with HR and Legal to update contract language, including stricter deadlines and contract termination clauses for SMEs who fell behind content submission deadlines.</li>
+              <li>Implemented Agile project management practices and AI-powered tools to automate repetitive production tasks and improve visibility.</li>
+            </ul>
+
+            <h4>Result</h4>
+            <ul>
+              <li>Reduced production timelines by 50% and increased productivity by 30%.</li>
+              <li>Postponement rates improved dramatically: from 41% (2019–2023) → 21% (2024) → 16% (2025).</li>
+              <li>Achieved a 23% decrease in course build postponements over two years since implementing the new schedule and contract framework.</li>
+            </ul>
+
+            <h4>Takeaway</h4>
+            <p>
+              This project highlights my ability to redesign and lead large-scale content production cycles, while building efficient, agile systems that reduce delays,
+              improve quality, and enable sustainable delivery of learning experiences at scale.
+            </p>
+
+            <figure>
+              <!-- Replace case1.png with your actual filename -->
+              <img src="case1.png" alt="Workflow visual made with Figma" />
+              <figcaption>Made with Figma</figcaption>
+            </figure>
+          </article>
+
+          <article class="case">
+            <h3>Large-Scale LMS Migration &amp; Content Governance</h3>
+
+            <h4>Challenge</h4>
+            <p>
+              The organization needed to migrate 3,000+ courses into a new LMS, but the new system lacked the capacity to track versioning of courses.
+              This posed a serious risk of losing course histories, duplicating content, and departments being unable to monitor their migration progress.
+            </p>
+
+            <h4>Action</h4>
+            <ul>
+              <li>Directed a comprehensive audit of 1,800+ online courses to establish a baseline before migration.</li>
+              <li>Created a SharePoint site to track each department’s migration status, giving stakeholders real-time visibility into their courses.</li>
+              <li>Designed a custom version tracking system to solve the LMS’s lack of built-in versioning, ensuring continuity and consistency across migrated content.</li>
+              <li>Coordinated cross-department collaboration with IT, faculty, and compliance teams to align on standards and migration processes.</li>
+            </ul>
+
+            <h4>Result</h4>
+            <ul>
+              <li>Successfully migrated all 3,000+ courses into the new LMS on time.</li>
+              <li>Ensured no courses were lost or forgotten during the migration process.</li>
+              <li>Each department gained clear visibility into the status of its course migrations.</li>
+              <li>Maintained consistent version numbers throughout the migration, solving a major gap in the new system.</li>
+            </ul>
+
+            <h4>Takeaway</h4>
+            <p>
+              This initiative demonstrates my skill in orchestrating complex, cross-functional content migrations while creating governance and tracking systems that ensure quality,
+              consistency, and global visibility.
+            </p>
+
+            <figure>
+              <!-- Replace case2.png with your actual filename -->
+              <img src="case2.png" alt="Example of Department SharePoint Migration List" />
+              <figcaption>Example of Department SharePoint Migration List</figcaption>
+            </figure>
+          </article>
+
+          <article class="case">
+            <h3>Digitizing Contracts &amp; Building a Scalable Tracking System</h3>
+
+            <h4>Challenge</h4>
+            <p>
+              Contract management for 200+ annual subject matter experts (SMEs) was fragmented across departments. Paper-based agreements (over 4,000 records) were difficult to track,
+              non-compliant, and there was no central system for contract management or build history. Leadership lacked visibility into key metrics such as how many courses were built per cycle,
+              SME utilization, or annual contractor costs, making it difficult to forecast budgets and allocate resources effectively.
+            </p>
+
+            <h4>Action</h4>
+            <ul>
+              <li>Digitized 4,000+ existing contracts and built a centralized SharePoint site to house all contract and course build data.</li>
+              <li>Designed a custom recall and version tracking system, addressing the absence of built-in versioning within the LMS.</li>
+              <li>Established a master list of all course builds and contracts, then created department-specific lists linked through Power Automate flows that updated automatically whenever changes were made to the main list.</li>
+              <li>Partnered with HR and Legal to ensure compliance by integrating contract deadlines, status tracking, and termination clauses directly into the system.</li>
+            </ul>
+
+            <h4>Result</h4>
+            <ul>
+              <li>Created a single source of truth for six years of historical and current course build and contract data.</li>
+              <li>Enabled leadership and departments to track builds per cycle, SME frequency, departmental output, and annual contract costs with clarity.</li>
+              <li>Significantly improved compliance and accountability, reducing risk of contract lapses and compliance issues.</li>
+              <li>Established a robust foundation for accurate budget forecasting and long-term operational planning.</li>
+            </ul>
+
+            <h4>Takeaway</h4>
+            <p>
+              This project shows how I build scalable operations and content tracking systems that strengthen compliance, improve transparency across departments,
+              and enable data-driven decision-making needed to support global education programs.
+            </p>
+
+            <figure>
+              <!-- Replace case3.png with your actual filename -->
+              <img src="case3.png" alt="Annual builds per academic department chart made with Figma" />
+              <figcaption>Made with Figma</figcaption>
+            </figure>
+          </article>
+        </section>
+
+        <hr />
+
+        <section id="testimonials">
+          <h2>Testimonials</h2>
+
+          <p><strong>Production Director - Direct Report, Academy of Art University</strong></p>
+          <blockquote>
+            <p>
+              <em>
+                “I appreciate Sam’s adeptness at keeping track of an endless string of details through custom-designed systems to keep things organized and optimized across our entire organization.
+                I also admire her ability to process complex situations and communicate them efficiently with various stakeholders, to keep things running smoothly. She's an integral asset to our team!”
+              </em>
+            </p>
+          </blockquote>
+
+          <p><strong>Production Administrator - Former Direct Report, Academy of Art University</strong></p>
+          <blockquote>
+            <p>
+              <em>
+                “Samantha was exceptionally analytical and solution-oriented as a leader. She stepped into the role seamlessly, was extremely knowledgeable and articulate, and was ready to undertake
+                any and all challenges. Furthermore, Samantha made the effort to check on her team members personally and nurture her relationships with everyone. It showed she truly cared and that made
+                her an absolute pleasure to work with and for.”
+              </em>
+            </p>
+          </blockquote>
+        </section>
+
+        <hr />
+
+        <section id="connect">
+          <h2>Let’s Connect</h2>
+          <p>
+            I’m always excited to share ideas and learn from others who are passionate about creating innovative, scalable learning experiences.
+            If you’d like to connect or chat about opportunities, I’d love to hear from you!
+          </p>
+
+          <ul>
+            <li><a href="mailto:samanthakblack@gmail.com">samanthakblack@gmail.com</a></li>
+            <li><a href="https://www.linkedin.com/in/skblack/" target="_blank" rel="noreferrer">LinkedIn</a></li>
+          </ul>
+
+          <p class="back-top"><a href="#top"><strong>Back to Top</strong></a></p>
+        </section>
+
+        <footer>
+          <p>© <span id="year"></span> Samantha Black</p>
+        </footer>
       </div>
-    </footer>
+    </main>
 
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
